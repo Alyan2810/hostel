@@ -20,6 +20,7 @@ class TenantController extends Controller
      */
     public function index()
     {
+        //A Test comment added
         $tenants = Tenant::with('category')->latest()->paginate(20);
         return view('admin.tenants.index', compact('tenants'));
     }
