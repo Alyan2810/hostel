@@ -22,7 +22,6 @@ class TenantController extends Controller
     {
         $tenants = Tenant::with('category')->latest()->paginate(20);
         return view('admin.tenants.index', compact('tenants'));
-        
     }
     /**
      * Show the form for creating a new resource.
