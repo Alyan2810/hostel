@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Tenant;
+use App\Models\Rent;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -76,8 +77,23 @@ class TenantController extends Controller
             'category_id' => $request->category,
             'mypackage_id' => $request->mypackage
            
-       
         ]);
+
+if($tenant)
+{
+    $admission_my =  date('m-y', strtotime($request->admission_date));
+    $rents = Rent::create([
+        'for_month' => $admission_my,
+        'rent_paid' => 0,
+        'rent_description' => 'First Month ',
+        'due_date' => now(),
+    // 'user_id' => $tenant->user_id,
+        'tenant_id' => $tenant->id
+    ]);
+
+}
+       
+
         return redirect()->route('admin.tenants.index');
     }
 
