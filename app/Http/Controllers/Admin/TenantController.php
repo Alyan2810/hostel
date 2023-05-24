@@ -174,6 +174,27 @@ if($tenant)
             'mypackage_id' => $request->mypackage
         ]);
 
+        if($is_active)
+        {
+            $admission_my =  date('m-y', strtotime($request->admission_date));
+
+            $rent_count =  Rent::where('tenant_id', '=', $tenant->id)->where('for_month', '=', $admission_my)->count();
+            
+            if($rent_count == 0 )
+            {
+                $rents = Rent::create([
+                    'for_month' =>$admission_my,
+                    'rent_paid' => 0,
+                    'rent_description' => 'Test Update Description',
+                    'due_date' => now(),
+                // 'user_id' => $tenant->user_id,
+                    'tenant_id' => $tenant->id
+                ]);
+            }
+           
+
+        }
+
         return redirect()->route('admin.tenants.index');
     }
 
