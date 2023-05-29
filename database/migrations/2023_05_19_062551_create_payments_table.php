@@ -19,7 +19,7 @@ class CreatePaymentsTable extends Migration
             $table->string('payment_mode',200);
             $table->string('for_month');
             $table->boolean('is_pending_payment')->default(false);
-            $table->string('payment_description',200);
+            $table->string('payment_description',200)->nullable();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('tenant_id')->constrained();
             $table->timestamp('payment_date');

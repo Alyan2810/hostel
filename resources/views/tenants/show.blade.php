@@ -27,6 +27,9 @@
                     @else
                     <img src="{{ asset('storage/no_image.jpg') }}" alt="" width="150" height="200">
                     @endif
+                    @if($tenant->id_image)
+                        <img src="{{ asset('storage/uploads/' . $tenant->id_image) }}" width="300" height="150">
+                    @endif
 
                     <table class="w-full text-left border-collapse">
                         <thead>
@@ -99,8 +102,8 @@
                                 <td class="px-6 py-4 border-b border-gray-200">{{ $tenant->security_ammount }}</td>
                             </tr>
                             <tr class="hover:bg-gray-50">
-                                <td class="px-6 py-4 border-b border-gray-200 font-bold"></td>
-                                <td class="px-6 py-4 border-b border-gray-200"></td>
+                                <td class="px-6 py-4 border-b border-gray-200 font-bold">Added By</td>
+                                <td class="px-6 py-4 border-b border-gray-200">{{ $tenant->user->name }}</td>
                                 <td class="px-6 py-4 border-b border-gray-200 font-bold"></td>
                                 <td class="px-6 py-4 border-b border-gray-200"> 
                                     @auth                 

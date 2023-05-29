@@ -10,7 +10,7 @@
                     <form method="POST" action="{{ route('admin.tenants.update', $tenant) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        
+                        <input type="hidden" name="admission_date" value="{{$tenant->admission_date}}" >
                         <div class="mb-4">
                             <x-label for="category">Category</x-label>
                             <select name="category" id="category" class="block w-1/4 mt-1 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
@@ -60,13 +60,13 @@
                             @enderror
                         </div>
                         <div class="mb-4">
-                            <x-label  for="admission_date">Admission Date</x-label>
+                            <x-label  for="update_admission_date">Admission Date</x-label>
                             
                             {{Carbon\Carbon::parse($tenant->admission_date)->format('d M Y');}}
                            
-                            <x-input id="admission_date" class="block w-1/3 mt-1" name="admission_date" type="date" value="{{ old('admission_date', $tenant->admission_date) }}"/>
+                            <x-input id="update_admission_date" class="block w-1/3 mt-1" name="update_admission_date" type="date" value=""/>
                             
-                            @error('admission_date')
+                            @error('update_admission_date')
                             <span class="font-medium text-red-600" role="alert">{{ $message }}</span>
                             @enderror
                         </div>
@@ -195,6 +195,13 @@
                             <x-label for="image">Image/Photo</x-label>
                             <x-input d="image" class="block w-full mt-1" name="image" type="file"/>
                             @error('image')
+                            <span class="font-medium text-red-600" role="alert">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="mb-4">
+                            <x-label for="id_image">Image/ID Card</x-label>
+                            <x-input d="id_image" class="block w-full mt-1" name="id_image" type="file"/>
+                            @error('id_image')
                             <span class="font-medium text-red-600" role="alert">{{ $message }}</span>
                             @enderror
                         </div>

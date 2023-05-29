@@ -48,7 +48,7 @@
                                                <span class="mr-3 text-sm font-medium " style=" color:red; " ><b>Due Rent:</b> {{ $monthName }} {{$yearName}}</span> 
                                             </div>
                                             <div class="flex flex-wrap">
-                                               <span class="mr-3 text-sm font-medium "><b>Package:</b> {{ $tenants[0]->mypackage->package_name }}</span> 
+                                               <span class="mr-3 text-sm font-medium "><b>Package:</b> {{ $tenants[0]->mypackage->package_name }} <b>RS. {{ $tenants[0]->mypackage->package_price }}</b></span> 
                                             </div>
                                             <div class="flex flex-wrap">
                                                <span class="mr-3 text-sm font-medium "><b>ID:</b> {{ $tenants[0]->tenant_nid }}</span> 

@@ -17,7 +17,7 @@ class Rent extends Model
         'tenant_id'
     ];
 
-    public function tenants()
+    public function tenant()
     {
         return $this->belongsTo(Tenant::class);
     }

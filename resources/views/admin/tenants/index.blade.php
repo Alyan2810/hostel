@@ -7,9 +7,20 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <div class="mb-4">
+                   
+                <div class="mb-4">
                         <x-link :href="route('admin.tenants.create')">Add New Tenant</x-link>
                     </div>
+
+                    <form method="POST" action="{{ route('admin.tenants.search') }}" >
+                        @csrf
+                        <div class="mb-4">
+                            <x-label for="search_text">Search Tenant</x-label>
+                            <x-input id="search_text" class="inline w-half mt-1" name="search_text" required value="{{ $search_text }}" type="text"/>
+                            <x-button>Go</x-button>
+                        </div>
+                    </form>
+
                     <table class="w-full text-left border-collapse">
                         <thead>
                         <tr>

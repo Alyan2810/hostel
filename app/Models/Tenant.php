@@ -29,6 +29,7 @@ class Tenant extends Model
         'living_before',
         'reletive_name',
         'image',
+        'id_image',
         'relative_phone',
         'is_active',
         'room_no',

@@ -32,7 +32,7 @@
                             <tr class="hover:bg-gray-50">
                                <td class="px-6 py-4 border-b border-gray-200">{{ $tenant->tenant_name }}</td>
                                 <td class="px-6 py-4 border-b border-gray-200">{{ $tenant->category->name }}</td>
-                                <td class="px-6 py-4 border-b border-gray-200">{{ $tenant->mypackage->package_name }}</td>
+                                <td class="px-6 py-4 border-b border-gray-200">{{ $tenant->mypackage->package_price }}<br>{{ $tenant->mypackage->package_name }}</td>
                                 <td class="px-6 py-4 border-b border-gray-200">
                                     <x-link href="{{ route('admin.tenants.edit', $tenant->id) }}">
                                         Edit

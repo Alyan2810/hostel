@@ -33,6 +33,7 @@ class CreateTenantsTable extends Migration
             $table->string('reletive_name',255)->nullable();
             $table->string('relative_phone',255)->nullable();
             $table->string('image')->nullable();
+            $table->string('id_image')->nullable();
             $table->foreignId('category_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();

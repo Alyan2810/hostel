@@ -45,6 +45,7 @@ class CreateTenantRequest extends FormRequest
             'reletive_name' => 'nullable',
             'relative_phone' => 'nullable|digits_between:6,11',
             'image'     => 'nullable|image|dimensions:max_width=300,max_height=300',
+            'id_image'     => 'nullable|image|dimensions:max_width=400,max_height=400',
             'category'  => 'required|integer|exists:categories,id',
             'mypackage'  => 'required|integer|exists:mypackages,id'
         ];

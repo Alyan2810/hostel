@@ -59,6 +59,8 @@ Route::get('post/{id}', [PostController::class, 'show'])->name('posts.show');
 Route::post('tenants', [TenantController::class, 'search'])->name('tenants.search');
 Route::get('tenants', [TenantController::class, 'index'])->name('tenants.index');
 Route::get('tenant/{id}', [TenantController::class, 'show'])->name('tenants.show');
+Route::post('pending', [TenantController::class, 'search_pending'])->name('tenants.search_pending');
+Route::get('pending', [TenantController::class, 'pending_tenants'])->name('tenants.pending');
 
 
 Route::view('about', 'pages.about')->name('about');
@@ -71,8 +73,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
     Route::resource('tags', AdminTagController::class);
     Route::resource('users', AdminUserController::class);
     Route::resource('posts', AdminPostController::class);
+    
+
 });
 
+Route::post('admin/tenants', [AdminTenanCtontroller::class, 'search'])->name('admin.tenants.search');
 Route::group(['middleware' => 'auth'], function () {
 Route::resource('tasks', TaskController::class);
 });

@@ -13,8 +13,11 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 
-                    <x-nav-link :href="route('tenants.index')" :active="request()->routeIs('tenants.index') || request()->routeIs('tenants.show')">
+                <x-nav-link :href="route('tenants.index')" :active="request()->routeIs('tenants.index') || request()->routeIs('tenants.show')">
                         Tenants
+                    </x-nav-link>
+                    <x-nav-link :href="route('tenants.pending')" :active="request()->routeIs('tenants.pending') || request()->routeIs('tenants.show')">
+                         Pending Rent
                     </x-nav-link>
                    
                    
@@ -31,9 +34,11 @@
                     <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
                         Login
                     </x-nav-link>
+                    <?php /*
                     <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
                         Register
                     </x-nav-link>
+                    */?>
                 @else
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
@@ -85,18 +90,16 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-        <x-responsive-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.index')">
-                Users
+        <x-responsive-nav-link :href="route('admin.tenants.index')" :active="request()->routeIs('admin.tenants.index')">
+        Tenants
         </x-responsive-nav-link>   
-        <x-responsive-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
-                Categories
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('admin.mypackages.index')" :active="request()->routeIs('admin.mypackages.index')">
+         <x-responsive-nav-link :href="route('admin.mypackages.index')" :active="request()->routeIs('admin.mypackages.index')">
                 Pacakges
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('admin.tenants.index')" :active="request()->routeIs('admin.tenants.index')">
-            Tenants
+            <x-responsive-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
+                Hostel/Block
             </x-responsive-nav-link>
+          
         </div>
 
         <!-- Responsive Settings Options -->

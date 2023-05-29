@@ -30,7 +30,7 @@
                                                 <span class="mr-3 text-sm font-medium uppercase">{{ $tenant[0]->room_no }} - {{ $tenant[0]->category->name }}</span>
                                             </div>
                                             <div class="flex flex-wrap">
-                                            <span class="mr-3 text-sm font-medium "><b>Package:</b> {{ $tenant[0]->mypackage->package_name }}</span> 
+                                            <span class="mr-3 text-sm font-medium "><b>Package:</b> {{ $tenant[0]->mypackage->package_name }}<b> RS. {{ $tenant[0]->mypackage->package_price }}</b></span> 
                                             </div>
                                             <div class="flex flex-wrap">
                                             <span class="mr-3 text-sm font-medium "><b>ID:</b> {{ $tenant[0]->tenant_nid }}</span> 
@@ -86,7 +86,7 @@
 
                                     {{Carbon\Carbon::parse($payment->payment_date)->format('d M Y');}}
                                 </td>
-                                <td class="px-6 py-4 border-b border-gray-200">{{ $payment->payment_description }} - by {{ $payment->user->name }} </td>
+                                <td class="px-6 py-4 border-b border-gray-200">{{ $payment->payment_description }} <b>Added by:</b> {{ $payment->user->name }} </td>
                                 <td class="px-6 py-4 border-b border-gray-200">
                                    
                                 @if(!$payment->is_pending_payment)

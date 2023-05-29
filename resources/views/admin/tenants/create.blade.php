@@ -187,6 +187,13 @@
                             <span class="font-medium text-red-600" role="alert">{{ $message }}</span>
                             @enderror
                         </div>
+                        <div class="mb-4">
+                            <x-label for="id_image">Image/ID Card</x-label>
+                            <x-input d="id_image" class="block w-full mt-1" name="id_image" type="file"/>
+                            @error('id_image')
+                            <span class="font-medium text-red-600" role="alert">{{ $message }}</span>
+                            @enderror
+                        </div>
                         
                         
                        

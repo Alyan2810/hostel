@@ -136,6 +136,9 @@
                         @endif
 
                     </div>
+                    <div class="p-6 bg-white border-t mt-4 border-gray-200">
+                    {{ $tenants->links() }}
+                    </div>
                 </div>
             </div>
         </div>
