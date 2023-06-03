@@ -77,7 +77,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], fu
 
 });
 
-Route::post('admin/tenants', [AdminTenanCtontroller::class, 'search'])->name('admin.tenants.search');
+Route::post('admin/tenants/search', [AdminTenanCtontroller::class, 'search'])->name('admin.tenants.search');
 Route::group(['middleware' => 'auth'], function () {
 Route::resource('tasks', TaskController::class);
 });

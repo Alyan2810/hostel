@@ -40,6 +40,7 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @if(!is_null($tenants))
                         @foreach ($tenants as $tenant)
                             <tr class="hover:bg-gray-50">
                                 <td class="px-6 py-4 border-b border-gray-200">{{ $tenant->room_no }}</td>
@@ -61,9 +62,21 @@
                             </tr>
                         @endforeach
                         </tbody>
+                        @else 
+                        <x-slot name="header">
+                            <h2 class="text-xl font-semibold leading-tight text-gray-800">
+                                Tenants Not found
+                            </h2>
+                        </x-slot>
+                        @endif
                     </table>
-
+                    @if(!is_null($tenants))
+                    <div class="p-6 bg-white border-t mt-4 border-gray-200">
+                    
                     {{ $tenants->links() }}
+                    </div>
+                   @endif 
+
                 </div>
             </div>
         </div>

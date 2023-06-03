@@ -16,10 +16,8 @@
                             <x-label for="search_text">Search Tenant</x-label>
                             <x-input id="search_text" class="inline w-half mt-1" name="search_text" required value="{{ $search_text }}" type="text"/>
                             <x-button>Go</x-button>
-                        </div>
-                        
+                        </div>   
                 </form>
-
                     <div class="-my-8 divide-y-2 divide-gray-100">
                         @if(!is_null($tenants))
                         @foreach ($tenants as $tenant)
@@ -33,8 +31,7 @@
                                     <span class="font-semibold text-gray-700 title-font">{{ $tenant->tenant_name }}</span>
                                     <span class="mt-1 text-sm text-gray-500">
                                         {{Carbon\Carbon::parse($tenant->admission_date)->format('d M Y');}}
-                                    </span>
-                                       
+                                    </span>  
                                 </div>
                                 <div class="md:flex-grow">
                                     <div class="space-y-6">
@@ -129,16 +126,19 @@
                         @else 
                         <x-slot name="header">
                             <h2 class="text-xl font-semibold leading-tight text-gray-800">
-                                Posts Not found
+                                Tenants Not found
                             </h2>
                         </x-slot>
-                        
                         @endif
+                        
 
                     </div>
+                    @if(!is_null($tenants))
                     <div class="p-6 bg-white border-t mt-4 border-gray-200">
+                    
                     {{ $tenants->links() }}
                     </div>
+                   @endif 
                 </div>
             </div>
         </div>
