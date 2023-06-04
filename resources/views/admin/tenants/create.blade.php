@@ -95,7 +95,7 @@
                             @enderror
                         </div>
                         <div class="mb-4">
-                            <x-label for="police_station">Police Station</x-label>
+                            <x-label for="police_station">City</x-label>
                             <x-input id="police_station" class="block w-1/2 mt-1" name="police_station" required value="{{ old('police_station') }}" type="text"/>
                             @error('police_station')
                             <span class="font-medium text-red-600" role="alert">{{ $message }}</span>

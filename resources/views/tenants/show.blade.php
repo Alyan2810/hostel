@@ -62,7 +62,7 @@
                             <tr class="hover:bg-gray-50">
                                 <td class="px-6 py-4 border-b border-gray-200 font-bold">Permanent Add</td>
                                 <td class="px-6 py-4 border-b border-gray-200">{{ $tenant->permanent_add }}</td>
-                                <td class="px-6 py-4 border-b border-gray-200 font-bold">Police Station</td>
+                                <td class="px-6 py-4 border-b border-gray-200 font-bold">City</td>
                                 <td class="px-6 py-4 border-b border-gray-200">{{ $tenant->police_station }}</td>
                             </tr>
                             <tr class="hover:bg-gray-50">

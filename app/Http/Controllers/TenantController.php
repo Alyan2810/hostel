@@ -59,7 +59,7 @@ class TenantController extends Controller
 
       /////////////////////////--------------Cron Job Manually Ends--------------//////
       $search_text =  $request->search_text;
-        $tenants = Tenant::where('tenant_name','LIKE','%'.$search_text.'%')->orWhere('tenant_nid','LIKE','%'.$search_text.'%')->with('category')->take(5)->latest()->paginate(10);
+        $tenants = Tenant::where('tenant_name','LIKE','%'.$search_text.'%')->orWhere('tenant_nid','=',$search_text)->orWhere('police_station','LIKE','%'.$search_text.'%')->with('category')->take(5)->latest()->paginate(10);
         $rents = Rent::where('rent_paid', '=', 0)->get();
         if(count($tenants) > 0)
       return view('tenants.index', compact('tenants' , 'search_text', 'rents'));
