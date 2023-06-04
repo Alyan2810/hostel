@@ -12,14 +12,14 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                
+                @auth
                 <x-nav-link :href="route('tenants.index')" :active="request()->routeIs('tenants.index') || request()->routeIs('tenants.show')">
                         Tenants
                     </x-nav-link>
                     <x-nav-link :href="route('tenants.pending')" :active="request()->routeIs('tenants.pending') || request()->routeIs('tenants.show')">
                          Pending Rent
                     </x-nav-link>
-                   
+                @endauth 
                    
                    
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
@@ -60,7 +60,7 @@
                         <!--  <x-dropdown-link :href="route('admin.users.index')">Users</x-dropdown-link>
                        <x-dropdown-link :href="route('admin.tags.index')">Tags</x-dropdown-link>
                         <x-dropdown-link :href="route('admin.posts.index')">Posts</x-dropdown-link>
-                        <x-dropdown-link :href="route('tasks.index')">Tasks</x-dropdown-link> -->
+                        -->
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
